@@ -1,0 +1,14 @@
+if __name__ == "__main__":
+    from tkinter import *
+    from tkinter.filedialog import *
+    import sys
+    import interpeter as i
+
+    root = Tk()
+    root.filename =  askopenfilename(filetypes=(
+                                           ("Viper Source Code", "*.*"), 
+                                           ("Viper Source Extension", "*.*")))
+    with open(str(root.filename), "r") as ex:
+        exec(ex.read())
+    root.destroy()
+    sys.exit()
